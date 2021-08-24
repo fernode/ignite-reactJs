@@ -1,11 +1,5 @@
-import React from 'react';
+import React from 'react'
+import { render } from 'react-dom'
+import App from './app'
 
-const index = () => {
-    return (
-        <>
-            <h1>Será que vai funcionar?</h1>   
-        </>
-    );
-}
-
-export default index;
+render(<App />, document.getElementById('root'))
