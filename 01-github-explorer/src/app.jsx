@@ -3,7 +3,7 @@ import React from 'react'
 const app = () => {
   return (
     <div>
-      <h1>Aqui está o meu arquivo app</h1>
+      <h1>Webpack de base</h1>
     </div>
   )
 }
