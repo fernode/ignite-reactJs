@@ -9,9 +9,15 @@ export const Container = styled.div`
     border-spacing: 0 1rem;
     text-align: left;
 
-    th {
-      color: var(--text-body);
-      padding-left: 3.2rem;
+    thead {
+      th {
+        color: var(--text-body);
+        padding-left: 3.2rem;
+      }
+
+      tr {
+        background: transparent;
+      }
     }
 
     tr {

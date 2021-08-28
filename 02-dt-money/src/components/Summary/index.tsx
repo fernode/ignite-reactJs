@@ -1,9 +1,16 @@
+import { useEffect } from 'react'
 import * as S from './styles'
 import Income from '../../assets/income.min.svg'
 import Outcome from '../../assets/outcome.min.svg'
 import Total from '../../assets/total.min.svg'
 
 const Summary = () => {
+  useEffect(() => {
+    fetch('http://localhost:3000/api/transactions')
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+  }, [])
+
   return (
     <S.Container>
       <S.Content>
