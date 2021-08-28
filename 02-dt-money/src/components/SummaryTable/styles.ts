@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   font-size: 1.6rem;
-  margin: 4rem auto;
+  margin: 6.4rem auto 0 auto;
 
   table {
     width: 100%;
