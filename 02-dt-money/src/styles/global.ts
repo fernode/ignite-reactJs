@@ -20,23 +20,21 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         @media(min-width: 1080px){
-            font-size: 62.5%; // 16px
+            font-size: 62.5%; // 10px
         }
 
         @media(max-width: 1080px){
-            font-size: 93.75%; // 15px
+            font-size: 56.25%; // 9px
         }
 
         @media(max-width: 720px){
-            font-size: 87.5%; // 14px
+            font-size: 50%; // 8px
         }
     }
 
     body {
         background: var(--background);
         -webkit-font-smoothing: antialiased;
-        font-smooth: always;
-
     }
     
     border-style,input, textarea, button {
