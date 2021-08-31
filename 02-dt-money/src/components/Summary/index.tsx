@@ -3,12 +3,13 @@ import * as S from './styles'
 import Income from '../../assets/income.min.svg'
 import Outcome from '../../assets/outcome.min.svg'
 import Total from '../../assets/total.min.svg'
+import api from '../../services/api'
 
 const Summary = () => {
   useEffect(() => {
-    fetch('http://localhost:3000/api/transactions')
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+    api('http://localhost:3000/api/transactions').then((data) =>
+      console.log(data)
+    )
   }, [])
 
   return (

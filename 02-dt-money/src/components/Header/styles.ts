@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
+import { lighten } from 'polished'
 
 export const Container = styled.header`
   background: var(--blue);
@@ -27,7 +27,7 @@ export const Content = styled.div`
     transition: 0.2s background;
 
     &:hover {
-      background: ${darken(0.2, '#6933ff')};
+      background: ${lighten(0.2, '#6933ff')};
     }
   }
 `
