@@ -75,11 +75,18 @@ export const GlobalStyle = createGlobalStyle`
 		position: relative;
 		border: .1rem solid #ccc;
 		background: var(--background);
-		-webkit-overflow-scrolling: 'touch';
+		-webkit-overflow-scrolling: touch;
 		border-radius: .4rem;
 		outline: none;
 		padding: 2rem;
 		width: 100%;
 		max-width: 57.6rem;
+
+
+		&__close-btn {
+			position: absolute;
+			right: 2rem;
+			border: none;
+		}
 	}
 `

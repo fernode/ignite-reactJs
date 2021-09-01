@@ -1,5 +1,7 @@
 import Modal from 'react-modal'
 import * as S from './styles'
+import CloseModal from '../../assets/close.min.svg'
+
 Modal.setAppElement('#root')
 
 interface NewTransactionModalProps {
@@ -23,14 +25,17 @@ const NewTransactionModal = ({
         className="react-modal-content__close-btn"
         onClick={onRequestClose}
       >
-        close
+        <img src={CloseModal} alt="Fechar modal" />
       </button>
+
       <S.Container>
         <h3>Cadastrar transação</h3>
-        <input type="text" placeholder="Nome" />
-        <input type="text" placeholder="Preço" />
-        <input type="text" placeholder="Categoria" />
-        <button type="submit">Cadastrar</button>
+        <div className="input-container">
+          <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Preço" />
+          <input type="text" placeholder="Categoria" />
+          <button type="submit">Cadastrar</button>
+        </div>
       </S.Container>
     </Modal>
   )
