@@ -1,6 +1,8 @@
 import Modal from 'react-modal'
 import * as S from './styles'
 import CloseModal from '../../assets/close.min.svg'
+import Income from '../../assets/income.min.svg'
+import Outcome from '../../assets/outcome.min.svg'
 
 Modal.setAppElement('#root')
 
@@ -33,8 +35,20 @@ const NewTransactionModal = ({
         <div className="input-container">
           <input type="text" placeholder="Nome" />
           <input type="text" placeholder="Preço" />
+          <S.TransactionTypeContainer>
+            <button>
+              <img src={Income} alt="Entrada" />
+              <span>Entrada</span>
+            </button>
+            <button>
+              <img src={Outcome} alt="Saída" />
+              <span>Saída</span>
+            </button>
+          </S.TransactionTypeContainer>
           <input type="text" placeholder="Categoria" />
-          <button type="submit">Cadastrar</button>
+          <button className="register-button" type="submit">
+            Cadastrar
+          </button>
         </div>
       </S.Container>
     </Modal>

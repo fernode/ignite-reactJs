@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { darken } from 'polished'
 
 export const Container = styled.form`
   font-size: 1.6rem;
@@ -13,7 +14,7 @@ export const Container = styled.form`
   .input-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-left: 3rem;
 
     input {
       height: 6.4rem;
@@ -28,18 +29,48 @@ export const Container = styled.form`
       }
     }
 
-    button {
+    .register-button {
       color: var(--shape);
       border: none;
       background: var(--green);
       height: 6.4rem;
       width: 48rem;
-      margin: 2.4rem auto 0 auto;
+      margin: 2.4rem 0 0 0;
       border-radius: 5px;
+      transition: filter 0.3s;
 
       &:hover {
         filter: brightness(0.9);
       }
+    }
+  }
+`
+
+export const TransactionTypeContainer = styled.div`
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 48rem;
+
+  button {
+    background: transparent;
+    border: 1.5px solid #969cb3;
+    height: 6.4rem;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-right: 1.8rem;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: ${darken(0.4, '#969cb3')};
     }
   }
 `
