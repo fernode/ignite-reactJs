@@ -1,6 +1,18 @@
+import { useEffect, useState } from 'react'
+import api from '../../services/api'
 import * as S from './styles'
 
 const SummaryTable = () => {
+  const [transactions, setTransaction] = useState([])
+
+  useEffect(() => {
+    api('http://localhost:3000/api/transactions').then((response) => {
+      const { data } = response
+
+      setTransaction(data)
+    })
+  }, [])
+
   return (
     <S.Container>
       <table>
