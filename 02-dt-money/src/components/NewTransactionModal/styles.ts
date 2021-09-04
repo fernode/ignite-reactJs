@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { darken } from 'polished'
+import { darken, transparentize } from 'polished'
 
 export const Container = styled.form`
   font-size: 1.6rem;
@@ -23,6 +23,7 @@ export const Container = styled.form`
       color: var(--text-body);
       border-radius: 0.5rem;
       border: 1px solid #d7d7d7;
+      background: #e7e9ee;
 
       & + input {
         margin-top: 1.6rem;
@@ -52,25 +53,39 @@ export const TransactionTypeContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   width: 48rem;
+`
 
-  button {
-    background: transparent;
-    border: 1.5px solid #969cb3;
-    height: 6.4rem;
-    border-radius: 0.5rem;
+const colors = {
+  green: '#33CC95',
+  red: '#E52E4D'
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+interface ButtonProps {
+  isActive: boolean
+  color: 'green' | 'red'
+}
 
-    img {
-      margin-right: 1.8rem;
-    }
+export const Button = styled.button<ButtonProps>`
+  ${(props) =>
+    props.isActive
+      ? `background: ${transparentize(0.9, colors[props.color])}`
+      : `background: transparent;`};
 
-    transition: all 0.3s;
+  border: 1.5px solid #969cb3;
+  height: 6.4rem;
+  border-radius: 0.5rem;
 
-    &:hover {
-      border-color: ${darken(0.4, '#969cb3')};
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    margin-right: 1.8rem;
+  }
+
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: ${darken(0.4, '#969cb3')};
   }
 `

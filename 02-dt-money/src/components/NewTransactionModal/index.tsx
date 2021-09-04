@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Modal from 'react-modal'
 import * as S from './styles'
 import CloseModal from '../../assets/close.min.svg'
@@ -15,6 +16,8 @@ const NewTransactionModal = ({
   isOpen,
   onRequestClose
 }: NewTransactionModalProps) => {
+  const [type, setType] = useState('deposity')
+
   return (
     <Modal
       isOpen={isOpen}
@@ -30,20 +33,29 @@ const NewTransactionModal = ({
         <img src={CloseModal} alt="Fechar modal" />
       </button>
 
-      <S.Container>
+      <S.Container action="#">
         <h3>Cadastrar transação</h3>
         <div className="input-container">
           <input type="text" placeholder="Nome" />
           <input type="text" placeholder="Preço" />
           <S.TransactionTypeContainer>
-            <button>
+            <S.Button
+              onClick={() => setType('deposity')}
+              isActive={type === 'deposity'}
+              color={'green'}
+            >
               <img src={Income} alt="Entrada" />
               <span>Entrada</span>
-            </button>
-            <button>
+            </S.Button>
+
+            <S.Button
+              onClick={() => setType('withdraw')}
+              isActive={type === 'withdraw'}
+              color={'red'}
+            >
               <img src={Outcome} alt="Saída" />
               <span>Saída</span>
-            </button>
+            </S.Button>
           </S.TransactionTypeContainer>
           <input type="text" placeholder="Categoria" />
           <button className="register-button" type="submit">
