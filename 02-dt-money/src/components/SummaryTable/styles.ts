@@ -25,6 +25,14 @@ export const Container = styled.div`
       height: 6.4rem;
       border-radius: 0.5rem;
 
+      .deposity {
+        color: var(--green);
+      }
+
+      .withdraw {
+        color: var(--red);
+      }
+
       td {
         color: var(--text-body);
         padding-left: 3.2rem;

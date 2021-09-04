@@ -20,7 +20,7 @@ const NewTransactionModal = ({
 }: NewTransactionModalProps) => {
   const [type, setType] = useState('deposity')
   const [title, setTitle] = useState('')
-  const [value, setValue] = useState(0)
+  const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
 
   function handleCreateNewTransaction(e: FormEvent) {
@@ -29,7 +29,7 @@ const NewTransactionModal = ({
     const body = {
       type,
       title,
-      value,
+      amount,
       category
     }
 
@@ -63,9 +63,9 @@ const NewTransactionModal = ({
           <input
             type="number"
             placeholder="Valor"
-            value={value}
+            value={amount}
             min="1"
-            onChange={(e) => setValue(Number(e.target.value))}
+            onChange={(e) => setAmount(Number(e.target.value))}
           />
           <S.TransactionTypeContainer>
             <S.Button
