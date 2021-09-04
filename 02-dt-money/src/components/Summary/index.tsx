@@ -1,17 +1,14 @@
-import { useEffect } from 'react'
+import { useContext } from 'react'
 import * as S from './styles'
 import Income from '../../assets/income.min.svg'
 import Outcome from '../../assets/outcome.min.svg'
 import Total from '../../assets/total.min.svg'
-import api from '../../services/api'
+import { TransactionsContext } from '../../TransactionsContext'
 
 const Summary = () => {
-  useEffect(() => {
-    api('http://localhost:3000/api/transactions').then((data) =>
-      console.log(data)
-    )
-  }, [])
+  const transactions = useContext(TransactionsContext)
 
+  console.log({ transactions })
   return (
     <S.Container>
       <S.Content>
