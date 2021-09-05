@@ -3,7 +3,7 @@ import { TransactionsContext } from '../../TransactionsContext'
 import * as S from './styles'
 
 const SummaryTable = () => {
-  const transactions = useContext(TransactionsContext)
+  const context = useContext(TransactionsContext)
 
   return (
     <S.Container>
@@ -18,7 +18,7 @@ const SummaryTable = () => {
         </thead>
 
         <tbody>
-          {transactions.map((transaction) => (
+          {context.transactions.map((transaction) => (
             <tr key={transaction.id}>
               <td>{transaction.title}</td>
               <td className={transaction.type}>

@@ -1,11 +1,10 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useContext, useState } from 'react'
 import Modal from 'react-modal'
 import * as S from './styles'
 import CloseModal from '../../assets/close.min.svg'
 import Income from '../../assets/income.min.svg'
 import Outcome from '../../assets/outcome.min.svg'
-
-import api from '../../services/api'
+import { TransactionsContext } from '../../TransactionsContext'
 
 Modal.setAppElement('#root')
 
@@ -22,18 +21,12 @@ const NewTransactionModal = ({
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
+  const transactions = useContext(TransactionsContext)
 
-  function handleCreateNewTransaction(e: FormEvent) {
+  function handleNewTransaction(e: FormEvent) {
     e.preventDefault()
 
-    const body = {
-      type,
-      title,
-      amount,
-      category
-    }
-
-    api.post('/transactions', body)
+    transactions.createTransactions({ type, title, amount, category })
   }
 
   return (
@@ -51,7 +44,7 @@ const NewTransactionModal = ({
         <img src={CloseModal} alt="Fechar modal" />
       </button>
 
-      <S.Container onSubmit={handleCreateNewTransaction}>
+      <S.Container onSubmit={(e) => handleNewTransaction(e)}>
         <h3>Cadastrar transação</h3>
         <div className="input-container">
           <input
