@@ -26,7 +26,7 @@ interface TransactionsContentData {
   createTransactions: (transaction: TransactionInput) => Promise<void>
 }
 
-export const TransactionsContext = createContext<TransactionsContentData>(
+const TransactionsContext = createContext<TransactionsContentData>(
   {} as TransactionsContentData
 )
 
