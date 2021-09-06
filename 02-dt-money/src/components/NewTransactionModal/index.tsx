@@ -23,10 +23,16 @@ const NewTransactionModal = ({
   const [category, setCategory] = useState('')
   const transactions = useContext(TransactionsContext)
 
-  function handleNewTransaction(e: FormEvent) {
+  async function handleNewTransaction(e: FormEvent) {
     e.preventDefault()
 
-    transactions.createTransactions({ type, title, amount, category })
+    await transactions.createTransactions({ type, title, amount, category })
+
+    onRequestClose()
+    setTitle('')
+    setAmount(0)
+    setCategory('')
+    setType('deposity')
   }
 
   return (
