@@ -1,10 +1,10 @@
-import { FormEvent, useContext, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Modal from 'react-modal'
 import * as S from './styles'
 import CloseModal from '../../assets/close.min.svg'
 import Income from '../../assets/income.min.svg'
 import Outcome from '../../assets/outcome.min.svg'
-import { TransactionsContext } from '../../TransactionsContext'
+import { useTransactions } from '../../hooks/UseTransactions'
 
 Modal.setAppElement('#root')
 
@@ -21,7 +21,7 @@ const NewTransactionModal = ({
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
-  const transactions = useContext(TransactionsContext)
+  const transactions = useTransactions()
 
   async function handleNewTransaction(e: FormEvent) {
     e.preventDefault()

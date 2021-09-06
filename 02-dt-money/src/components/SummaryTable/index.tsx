@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { TransactionsContext } from '../../TransactionsContext'
+import { TransactionsContext } from '../../hooks/UseTransactions'
 import * as S from './styles'
 
 const SummaryTable = () => {
