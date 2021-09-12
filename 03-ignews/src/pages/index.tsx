@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import styles from '../styles/home.module.scss'
 
 export default function Home() {
 	return (
@@ -9,8 +10,8 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main >
-				<h1>Aplicação next js</h1>
+			<main>
+				<h1 className={styles.title}>Aplicação next js</h1>
 			</main>
 
 			<footer>
