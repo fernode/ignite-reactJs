@@ -1,4 +1,4 @@
-import { AiFillGithub } from 'react-icons/ai'
+import { SignButton } from 'components/SignBottom'
 import styles from './styles.module.scss'
 
 export function Header() {
@@ -19,10 +19,7 @@ export function Header() {
 					</ul>
 				</nav>
 
-				<button>
-					<AiFillGithub />
-					Sign in with github
-				</button>
+				<SignButton />
 			</div>
 		</header>
 	)

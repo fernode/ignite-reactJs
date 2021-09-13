@@ -55,23 +55,5 @@
 
 	button {
 		margin-left: auto;
-		background: var(--gray-800);
-		border-radius: 10rem;
-		width: 21.8rem;
-		font-size: 1.6rem;
-		font-weight: 700;
-		height: 4.8rem;
-		border: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--white);
-
-		svg {
-			fill: var(--yellow-500);
-			width: 2.2rem;
-			height: 2.2rem;
-			margin-right: 1rem;
-		}
 	}
 }
