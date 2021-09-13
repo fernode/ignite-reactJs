@@ -1,5 +1,4 @@
-import { Head } from 'next/document'
-import styles from '../styles/home.module.scss'
+import Head from 'next/head'
 
 export default function Home() {
 	return (
@@ -9,7 +8,7 @@ export default function Home() {
 			</Head>
 
 			<main>
-				<h1 className={styles.title}>Aplicação next js</h1>
+				<h1>Aplicação em next js</h1>
 			</main>
 		</>
 	)
