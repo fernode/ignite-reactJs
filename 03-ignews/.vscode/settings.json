@@ -2,5 +2,10 @@
 	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
-	}
+	},
+	"files.associations": {
+    "*.env.development": "env",
+    "*.env.production": "env",
+    "*.env.local": "env"
+  }
 }
