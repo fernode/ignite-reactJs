@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import Image from 'next/image'
 import { SignButton } from 'components/SignBottom'
 import styles from './styles.module.scss'
 
@@ -5,16 +7,23 @@ export function Header() {
 	return (
 		<header className={styles.headerContainer}>
 			<div className={styles.headerContent}>
-				<img src="/images/logo.svg" alt="logo ig news" />
+				<Image
+					src="/images/logo.svg"
+					alt="logo ig news"
+					width={108}
+					height={30}
+				/>
 				<nav>
 					<ul>
 						<li>
-							<a href="/" className={styles.active}>
-								Home
-							</a>
+							<Link href="/">
+								<a className={styles.active}>Home</a>
+							</Link>
 						</li>
 						<li>
-							<a href="/posts">Posts</a>
+							<Link href="/posts">
+								<a>Posts</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>
