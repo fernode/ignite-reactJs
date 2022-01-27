@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { SignButton } from 'components/SignBottom'
 import styles from './styles.module.scss'
+import ActiveLink from 'components/ActiveLink'
 
 export function Header() {
 	return (
@@ -16,14 +16,14 @@ export function Header() {
 				<nav>
 					<ul>
 						<li>
-							<Link href="/">
-								<a className={styles.active}>Home</a>
-							</Link>
+							<ActiveLink activeClassName={styles.active} href="/">
+								<a>Home</a>
+							</ActiveLink>
 						</li>
 						<li>
-							<Link href="/posts">
+							<ActiveLink activeClassName={styles.active} href="/posts">
 								<a>Posts</a>
-							</Link>
+							</ActiveLink>
 						</li>
 					</ul>
 				</nav>
