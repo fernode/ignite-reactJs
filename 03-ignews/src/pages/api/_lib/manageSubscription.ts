@@ -1,6 +1,6 @@
 import { query as q } from 'faunadb'
-import { stripe } from '../../../services/stripe'
-import { fauna } from '../../../services/fauna'
+import { stripe } from 'services/stripe'
+import { fauna } from 'services/fauna'
 
 export async function saveSubscription(
 	subscriptionId: string,

@@ -2,10 +2,10 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import React from 'react'
 import Client from 'services/prismic'
-import Prismic from '@prismicio/client'
 import { getSession } from 'next-auth/client'
 import { RichText } from 'prismic-dom'
 import styles from './post.module.scss'
+import { redirect } from 'next/dist/server/api-utils'
 
 interface PostProps {
 	post: {
@@ -42,9 +42,16 @@ function Post({ post }: PostProps) {
 export const getServerSideProps = async ({ req, params }) => {
 	const session = await getSession({ req })
 	const { slug } = params
-
 	const prismic = Client(req)
 	const response = await prismic.getByUID('publication', String(slug), {})
+	if (!session.activeSubscription) {
+		return {
+			redirect: {
+				destination: '/',
+				permanent: false
+			}
+		}
+	}
 
 	if (!response) return { notFound: true }
 
